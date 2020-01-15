@@ -34,7 +34,9 @@ function onceApp(event, listener) {
 }
 
 function setFeedURL(url) {
-  getAutoUpdater() && getAutoUpdater().setFeedURL(url);
+  getAutoUpdater() && getAutoUpdater().setFeedURL({
+    url
+  });
 }
 
 function checkForUpdates() {
