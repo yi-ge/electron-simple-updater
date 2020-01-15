@@ -14,6 +14,7 @@ try {
 module.exports = {
   offApp,
   onceApp,
+  setFeedURL,
   checkForUpdates,
   getAppName,
   getAppVersion,
@@ -32,8 +33,12 @@ function onceApp(event, listener) {
   getApp() && getApp().on(event, listener);
 }
 
+function setFeedURL(url) {
+  getAutoUpdater() && getAutoUpdater().setFeedURL(url);
+}
+
 function checkForUpdates() {
-  getAutoUpdater() && getAutoUpdater.checkForUpdates();
+  getAutoUpdater() && getAutoUpdater().checkForUpdates();
 }
 
 /**

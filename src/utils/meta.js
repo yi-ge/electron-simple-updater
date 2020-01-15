@@ -1,6 +1,6 @@
 'use strict';
 
-const semver = require('semver');
+const semverGt = require('semver/functions/gt');
 const request = require('httpreq');
 
 module.exports = {
@@ -28,7 +28,7 @@ function extractUpdateMeta(updatesMeta, build, channel, version) {
     return;
   }
 
-  if (semver.gt(meta.version, version)) {
+  if (semverGt(meta.version, version)) {
     return meta;
   }
 }
